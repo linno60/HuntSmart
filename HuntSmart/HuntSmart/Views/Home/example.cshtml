@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+    <link rel="stylesheet" href="~/Content/StarRating.css">
+    <link rel="stylesheet" href="~/Content/userprofile.css">
+     
+    <title>HuntSmart - Know before you go </title>
+    <link rel="shortcut icon" href="~/img/favicon-64x64.png">
+
+    <!-- Fonts -->
+    <link href="~/Content/fonts.css" rel='stylesheet' type='text/css'>
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="~/Content/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/main-style.css">
+
+    <script src="~/Scripts/jquery.min.1.11.1.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/navbar.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css">
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome.min.css">
+<script>
+    $(document).ready(function () {
+        //for search button redirection
+
+        $('#search-button').click(function () {
+        
+            location.href = "/Home/companylist";
+        
+        })} );
+</script>
+  </head>
+  <body>
+<div class="toolbar navbar navbar-inverse navbar-fixed-top opaque-navbar opaque">
+    <div class="uou-block-1a blog">
+      <div class="container" style="padding-top: 5px">
+        <div class="logo" style="float:left" >
+          <div class="navbar-header">
+            <a class="navbar-brand navbar-a-color" href="#" style="font-size: 38px;padding-left:0px;color:#ffffff;">Hunt Smart</a>
+          </div>
+        </div>
+        <form class="navbar-form navbar-left" id="search-field" role="search" action="/Home/companylist"  style="height:33px;width:561px;padding-left:30px;">
+          <div class="input-group stylish-input-group" style="height:33px;outline:aliceblue;">
+            <input type="text" class="form-control"  style="height:33px;width:450px;color:#545454;" placeholder="Search" >
+            <span class="input-group-addon">
+              <button title="Advanced Search">
+                <span class="glyphicon glyphicon-cog"></span>
+              </button>
+              <button type="submit" title="Search">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </form>
+
+
+                <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown">
+                <img src="~/images/avatar-2.jpg" class="img-circle special-img">
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login">
+                                
+                                        <p class="text-center">
+                                            <img src="~/images/avatar-2.jpg" style="height:90px">
+                                        </p>
+                                    
+                                        <p class="text-center"><strong>Saif Ullah</strong></p>
+                                        <p class="text-center small">crazytodevelop@gmail.com</p>
+                                        <p class="text-left">
+                                            <a href="/Home/userProfile" class="btn btn-primary btn-block btn-sm" style="background-color:#2dabff">Profile</a>
+                                        </p>
+                                    
+                            </div>
+                        </li>
+                        <li class="divider navbar-login-session-bg"></li>
+                        <li><a href="/Home/userDashboard">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                        <li class="divider"></li>
+                        <li><a href="/Home/index">Log Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+      </div>
+    </div>
+  </div>
+
+      <h1 style="color:white">Review Form</h1>
+      <div style="background-color:black" class="container">
+          <div id="admin-controls">
+              <div style="margin-left:11%" ">
+                  <br />
+                  <br />
+                  <div>
+                      <h3 style ="color: white" id="reviewh">Please Provide Review for your Company</h3>
+                      <br />
+                      <div>
+                          <p style="color: #ffff00" id="reviewq">1.Will you suggest this company to others and want to work long term?</p>
+                          <br />
+                          <p>
+
+                              <span class="starRating">
+                                  <input id="rating5" type="radio" name="rating" value="5">
+                                  <label for="rating5">5</label>
+                                  <input id="rating4" type="radio" name="rating" value="4">
+                                  <label for="rating4">4</label>
+                                  <input id="rating3" type="radio" name="rating" value="3" checked>
+                                  <label for="rating3">3</label>
+                                  <input id="rating2" type="radio" name="rating" value="2">
+                                  <label for="rating2">2</label>
+                                  <input id="rating1" type="radio" name="rating" value="1">
+                                  <label for="rating1">1</label>
+                              </span>
+                          </p>
+                      </div>
+                      <div>
+                          <p style="color: #ffff00" id="reviewq">2.How would you rate influence of employee politics in this organization?</p>
+                          <br />
+                          <p>
+
+                              <span class="starRating">
+                                  <input id="rating5" type="radio" name="rating" value="5">
+                                  <label for="rating5">5</label>
+                                  <input id="rating4" type="radio" name="rating" value="4">
+                                  <label for="rating4">4</label>
+                                  <input id="rating3" type="radio" name="rating" value="3" checked>
+                                  <label for="rating3">3</label>
+                                  <input id="rating2" type="radio" name="rating" value="2">
+                                  <label for="rating2">2</label>
+                                  <input id="rating1" type="radio" name="rating" value="1">
+                                  <label for="rating1">1</label>
+                              </span>
+                          </p>
+                      </div>
+                      <div>
+                          <p style="color: #ffff00" id="reviewq">3.How would you rate influence of employee politics in this organization?</p>
+                          <br />
+                          <p>
+
+                              <span class="starRating">
+                                  <input id="rating5" type="radio" name="rating" value="5">
+                                  <label for="rating5">5</label>
+                                  <input id="rating4" type="radio" name="rating" value="4">
+                                  <label for="rating4">4</label>
+                                  <input id="rating3" type="radio" name="rating" value="3" checked>
+                                  <label for="rating3">3</label>
+                                  <input id="rating2" type="radio" name="rating" value="2">
+                                  <label for="rating2">2</label>
+                                  <input id="rating1" type="radio" name="rating" value="1">
+                                  <label for="rating1">1</label>
+                              </span>
+                          </p>
+                      </div>
+                      <div>
+                          <p style="color: #ffff00" id="reviewq">4.how do you rate gender baisedness in your company?</p>
+                          <br />
+                          <p>
+
+                              <span class="starRating">
+                                  <input id="rating5" type="radio" name="rating" value="5">
+                                  <label for="rating5">5</label>
+                                  <input id="rating4" type="radio" name="rating" value="4">
+                                  <label for="rating4">4</label>
+                                  <input id="rating3" type="radio" name="rating" value="3" checked>
+                                  <label for="rating3">3</label>
+                                  <input id="rating2" type="radio" name="rating" value="2">
+                                  <label for="rating2">2</label>
+                                  <input id="rating1" type="radio" name="rating" value="1">
+                                  <label for="rating1">1</label>
+                              </span>
+                          </p>
+                      </div>
+                      <div>
+                          <p style="color: #ffff00" id="reviewq">5.How would you rate timings in correspondance to work load on you?</p>
+                          <br />
+                          <p>
+
+                              <span class="starRating">
+                                  <input id="rating5" type="radio" name="rating" value="5">
+                                  <label for="rating5">5</label>
+                                  <input id="rating4" type="radio" name="rating" value="4">
+                                  <label for="rating4">4</label>
+                                  <input id="rating3" type="radio" name="rating" value="3" checked>
+                                  <label for="rating3">3</label>
+                                  <input id="rating2" type="radio" name="rating" value="2">
+                                  <label for="rating2">2</label>
+                                  <input id="rating1" type="radio" name="rating" value="1">
+                                  <label for="rating1">1</label>
+                              </span>
+                          </p>
+                      </div>
+                      <div>
+                          <p style="color: #ffff00" id="reviewq">6.How transparent is your organization's recruiting criteria??</p>
+                          <br />
+                          <p>
+
+                              <span class="starRating">
+                                  <input id="rating5" type="radio" name="rating" value="5">
+                                  <label for="rating5">5</label>
+                                  <input id="rating4" type="radio" name="rating" value="4">
+                                  <label for="rating4">4</label>
+                                  <input id="rating3" type="radio" name="rating" value="3" checked>
+                                  <label for="rating3">3</label>
+                                  <input id="rating2" type="radio" name="rating" value="2">
+                                  <label for="rating2">2</label>
+                                  <input id="rating1" type="radio" name="rating" value="1">
+                                  <label for="rating1">1</label>
+                              </span>
+                          </p>
+                      </div>
+                      <div>
+                          <p style="color: #ffff00" id="reviewq">7.Are salaries and incentives(over time, paid leaves, transportation facility, allowances, bonuses) attractive?</p>
+                          <br />
+                          <p>
+
+                              <span class="starRating">
+                                  <input id="rating5" type="radio" name="rating" value="5">
+                                  <label for="rating5">5</label>
+                                  <input id="rating4" type="radio" name="rating" value="4">
+                                  <label for="rating4">4</label>
+                                  <input id="rating3" type="radio" name="rating" value="3" checked>
+                                  <label for="rating3">3</label>
+                                  <input id="rating2" type="radio" name="rating" value="2">
+                                  <label for="rating2">2</label>
+                                  <input id="rating1" type="radio" name="rating" value="1">
+                                  <label for="rating1">1</label>
+                              </span>
+                          </p>
+                      </div>
+                      <div>
+                          <p style="color: #ffff00" id="reviewq">8.How much the chances of learning and growth you see here?</p>
+                          <br />
+                          <p>
+
+                              <span class="starRating">
+                                  <input id="rating5" type="radio" name="rating" value="5">
+                                  <label for="rating5">5</label>
+                                  <input id="rating4" type="radio" name="rating" value="4">
+                                  <label for="rating4">4</label>
+                                  <input id="rating3" type="radio" name="rating" value="3" checked>
+                                  <label for="rating3">3</label>
+                                  <input id="rating2" type="radio" name="rating" value="2">
+                                  <label for="rating2">2</label>
+                                  <input id="rating1" type="radio" name="rating" value="1">
+                                  <label for="rating1">1</label>
+                              </span>
+                          </p>
+                      </div>
+                      <div>
+                          <p style="color: #ffff00" id="reviewq">9.How much the behaviour and management of the company is commendable?</p>
+                          <br />
+                          <p>
+
+                              <span class="starRating">
+                                  <input id="rating5" type="radio" name="rating" value="5">
+                                  <label for="rating5">5</label>
+                                  <input id="rating4" type="radio" name="rating" value="4">
+                                  <label for="rating4">4</label>
+                                  <input id="rating3" type="radio" name="rating" value="3" checked>
+                                  <label for="rating3">3</label>
+                                  <input id="rating2" type="radio" name="rating" value="2">
+                                  <label for="rating2">2</label>
+                                  <input id="rating1" type="radio" name="rating" value="1">
+                                  <label for="rating1">1</label>
+                              </span>
+                          </p>
+                      </div>
+                      <div>
+                          <p style="color: #ffff00" id="reviewq">10.how often your organization organizes extra curricular activities (annual dinners, tours, workshops, birthday parties, sporting events)?</p>
+                          <br />
+                          <p>
+
+                              <span class="starRating">
+                                  <input id="rating5" type="radio" name="rating" value="5">
+                                  <label for="rating5">5</label>
+                                  <input id="rating4" type="radio" name="rating" value="4">
+                                  <label for="rating4">4</label>
+                                  <input id="rating3" type="radio" name="rating" value="3" checked>
+                                  <label for="rating3">3</label>
+                                  <input id="rating2" type="radio" name="rating" value="2">
+                                  <label for="rating2">2</label>
+                                  <input id="rating1" type="radio" name="rating" value="1">
+                                  <label for="rating1">1</label>
+                              </span>
+                          </p>
+                      </div>
+
+                      
+                  </div>
+                  <p>Comment:</p>
+                  <div class="row">
+
+                      <div class="col-md-10">
+                          <textarea style="width: 500px; border:2px solid #0099CC" id="comment" name="edu-des" rows="6"  form="myform" placeholder="Description"></textarea>
+                      </div>
+                  </div>
+                  <form action="/Home/experience">
+                      <button id="submitreview" name="submitreview" type="submit" onclick="javacript: rev()" class="btn btn-default">Submit</button>
+                  </form>
+</div>
+              <br />
+
+              <br />
+
+          </div>
+
+      </div>
+     
+
+    
+    <!-- FOOTER -->
+    <div class="uou-block-4a secondary dark" style="background-color:rgba(127,127,127,0.1);margin-top: 100px">
+      <div class="container">
+        <ul class="links">
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+        <p>Copyright &copy; 2016 <a href="#">TeamCodeJitters</a>. All Rights reserved.</p>
+      </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="~/Scripts/plugins/superfish.min.js"></script>
+    <script src="~/Scripts/plugins/rangeslider.min.js"></script>
+    <script src="~/Scripts/uou-accordions.js"></script>
+    <script src="~/Scripts/uou-tabs.js"></script>
+    <script src="~/Scripts/plugins/select2.min.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/gmap3.min.js"></script>
+    <script src="~/Scripts/scripts.js"></script>
+    <script src="~/Scripts/bootstrap.min.3.3.2.js"></script>
+  </body>
+
+</html>
+

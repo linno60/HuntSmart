@@ -1,0 +1,352 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Search Results - Hunt Smart</title>
+  <link rel="shortcut icon" href="~/img/favicon-64x64.png">
+
+  <!-- Fonts -->
+  <link href="~/Content/fonts.css" rel='stylesheet' type='text/css'>
+
+  <!-- Style Sheet -->
+  <link rel="stylesheet" href="~/Content/owl.carousel.css">
+  <link rel="stylesheet" href="~/Content/main-style.css">
+
+  <script src="~/Scripts/jquery.min.1.11.1.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="~/Content/navbar.css">
+  <link rel="stylesheet" type="text/css" href="~/Content/css">
+  <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+  <link rel="stylesheet" type="text/css" href="~/Content/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script>
+	//for search button redirection
+
+ 	$(document).ready(function () {
+      $('#search-button').click(function () {
+        
+        location.href = "/Home/companylist";
+        
+      });
+    });
+function currentEmail()
+{
+	var match = false;
+	var email1 = document.getElementById('email1');
+	var email2 = document.getElementById('email2');
+	var e = document.getElementById('e');
+	var message1 = document.getElementById('confirmMessage1');
+	var emailReg = /^(([^<>()[\]\\.,;:\s@@\"]+(\.[^<>()[\]\\.,;:\s@@\"]+)*)|(\".+\"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	//Set the colors we will be using ...
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+	if(email1.value == "a@a.com")
+	{
+		email1.style.backgroundColor = goodColor;
+        	message1.style.color = goodColor;
+        	message1.innerHTML = "Valid email!";
+		match = true;
+		if(emailReg.test(email2.value)){
+			if(email2.value == "a@a.com")
+				e.disabled = true;
+			else
+        			e.disabled = false;
+			
+    		}	
+	}
+	else
+	{
+		email1.style.backgroundColor = badColor;
+        	message1.style.color = badColor;
+        	message1.innerHTML = "Invalid email!";
+		e.disabled = true;
+	}
+	return match;
+}
+
+function checkEmail()
+{
+    //Store the password field objects into variables ...
+	var match = false;
+	var e = document.getElementById('e');
+    var email1 = document.getElementById('email1');
+    var email2 = document.getElementById('email2');
+    //Store the Confimation Message Object ...
+    var message = document.getElementById('confirmMessage');
+	var message2 = document.getElementById('confirmMessage2');	
+    //Set the colors we will be using ...
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+    //Compare the values in the password field 
+    //and the confirmation field
+    var emailReg = /^(([^<>()[\]\\.,;:\s@@\"]+(\.[^<>()[\]\\.,;:\s@@\"]+)*)|(\".+\"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+   
+    if(emailReg.test(email2.value)){
+        //The passwords match. 
+        //Set the color to the good color and inform
+        //the user that they have entered the correct password 
+        email2.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "Valid email syntax!";
+	match = true;
+	message2.style.display = "none";
+	if(email2.value == "a@a.com")
+	{
+		message2.style.display = "inline";
+		message2.style.color = badColor;
+        	message2.innerHTML = "Email already exist!";
+		e.disabled = true;
+	}
+	else{
+		if(email1.value == "a@a.com")
+			e.disabled = false;
+	}
+    }else{
+        //The passwords do not match.
+        //Set the color to the bad color and
+        //notify the user.
+        email2.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = "Invalid email syntax!"
+	e.disabled = true;
+    }
+	return match;
+}  
+
+
+</script>
+
+</head>
+
+<body>
+
+<!-- Top Toolbar -->
+ <div class="toolbar navbar navbar-inverse navbar-fixed-top opaque-navbar opaque">
+    <div class="uou-block-1a blog">
+      <div class="container" style="padding-top: 5px">
+        <div class="logo" style="float:left" >
+          <div class="navbar-header">
+            <a class="navbar-brand navbar-a-color" href="#" style="font-size: 38px;padding-left:0px;color:#ffffff;">Hunt Smart</a>
+          </div>
+        </div>
+        <form class="navbar-form navbar-left" id="search-field" role="search" action="companylist.html"  style="height:33px;width:561px;padding-left:30px;">
+          <div class="input-group stylish-input-group" style="height:33px;outline:aliceblue;">
+            <input type="text" class="form-control"  style="height:33px;width:450px;color:#545454;" placeholder="Search" >
+            <span class="input-group-addon">
+              <button title="Advanced Search">
+                <span class="glyphicon glyphicon-cog"></span>
+              </button>
+              <button type="submit" title="Search">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </form>
+
+
+                <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown">
+                <img src="~/images/avatar-2.jpg" class="img-circle special-img">
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login">
+                                
+                                        <p class="text-center">
+                                            <img src="~/images/avatar-2.jpg" style="height:90px">
+                                        </p>
+                                    
+                                        <p class="text-center"><strong>Saif Ullah</strong></p>
+                                        <p class="text-center small">crazytodevelop@gmail.com</p>
+                                        <p class="text-left">
+                                            <a href="/Home/userProfile" class="btn btn-primary btn-block btn-sm" style="background-color:#2dabff">Profile</a>
+                                        </p>
+                                    
+                            </div>
+                        </li>
+                        <li class="divider navbar-login-session-bg"></li>
+                        <li><a href="/Home/userDashboard">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                        <li class="divider"></li>
+                        <li><a href="/Home/index">Log Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+      </div>
+    </div>
+  </div>
+        <!-- end toolbar -->
+    <div id="main-wrapper">
+
+        <div class="compny-profile">
+            <!-- SUB Banner -->
+            <div class="profile-bnr user-profile-bnr">
+                <div class="container">
+                    <div class="pull-left">
+                        <h2>Wasim Anwar</h2>
+                        <h5>Senior Software Engineer</h5>
+                    </div>
+
+                    <!-- Top Riht Button -->
+                    <div class="right-top-bnr">
+                        <div class="sidebar">
+                            <h2 class="main-title">Social Profiles</h2>
+                            <ul class="socil">
+                                <li><a href="#."><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#."><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#."><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#."><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Profile Company Content -->
+            <div class="profile-company-content user-profile main-user" data-bg-color="f5f5f5">
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Nav Tabs -->
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs">
+                                <li><a data-toggle="tab" onclick="location.href = '/Home/userProfile'">Profile</a></li>
+                                <li><a data-toggle="tab" onclick="location.href = '/Home/experience'">Experience</a></li>
+				<li class="active"><a data-toggle="tab" onclick="location.href = '/Home/userDashboard'">Dashboard</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div class="col-md-12">
+                            <div class="tab-content">
+
+                                <!-- PROFILE -->
+                                <div id="profile" class="tab-pane fade in active">
+                                    <div class="row">
+                                        <div class="col-md-8">
+
+                                            <!-- Settings -->
+                                            <div class="sidebar">
+                                                <h5 class="main-title">Settings</h5>
+						<div class="main-title">
+						    <div class="row">
+                                                        <div class="col-sm-9">                                                          
+                                                            <label>Privacy Settings</label>
+                                                        </div>
+                                                        <div class="col-sm-3" style="margin-top:2%"><a id="privacy" name="privacy" href="privacy.html">Edit</a></div>
+                                                    </div>
+						</div>
+						<div class="main-title">
+						    <div class="row">
+                                                        <div class="col-sm-9">                                                          
+                                                            <label>Password</label>
+                                                        </div>
+                                                        <div class="col-sm-3" style="margin-top:2%"><a id="password" name="password" href="password.html">Edit</a></div>
+                                                    </div>
+						</div>
+
+						<div class="main-title">
+                                                     <form id="myform" class="form-inline">
+                                                           <div class="form-group">
+                                                                <label>Email</label>
+                                                        
+							   <div>
+                                                        	<div class="col-sm-7">                                                          
+                                                            		<p>Current</p>
+                                                        	</div>
+                                                        	<div class="col-sm-5" style="margin-top:2%"><input style="border:2px solid #0099cc;color: #000000;" id="email1" name="email1" type="email" onkeyup="currentEmail();" required/></div>
+							
+                                                    	   </div>
+							   <div>
+                                                        	<div class="col-sm-7">                                                         	
+                                                        	</div>
+								<div class="col-sm-5" style="margin-top:1%;font-size:12px;"><span id="confirmMessage1"></span></div>
+                                                    	   </div>
+							   <div>
+                                                        	<div class="col-sm-7">                                                          
+                                                            		<p>New</p>
+                                                        	</div>
+                                                        	<div class="col-sm-5" style="margin-top:2%"><input style="border:2px solid #0099cc;color: #000000;" id="email2" name="email2" onkeyup="checkEmail();" type="email" required/></div>
+                                                    	   </div>
+							   <div>
+                                                        	<div class="col-sm-7">                                                         	
+                                                        	</div>
+								<div class="col-sm-5" style="margin-top:1%;font-size:12px;"><span id="confirmMessage"></span></div>
+                                                    	   </div>
+							   <div>
+                                                        	<div class="col-sm-7">                                                         	
+                                                        	</div>
+								<div class="col-sm-5" style="margin-top:1%;font-size:12px;"><span id="confirmMessage2"></span></div>
+                                                    	   </div>
+							   <div class="row">
+                                                              
+                                                              <button disabled = "disabled" id="e" style="background-color: #0099CC" name="e" type="submit" value="password" class="btn btn-default">Save Changes</button>
+                                                              <a href="/Home/userDashboard"> <button id="cancel" style="background-color: #0099CC" name="cancel" type="button" value="cancel" class="btn btn-default">Cancel</button></a>
+                                                           </div>
+							 </div>  
+                                                     </form>
+							
+						</div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="uou-block-4a secondary dark" style="background-color:rgba(127,127,127,0.1);margin-top: 100px">
+      <div class="container">
+        <ul class="links">
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+        <p>Copyright &copy; 2016 <a href="#">TeamCodeJitters</a>. All Rights reserved.</p>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="~/Scripts/jquery-2.1.3.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/plugins/superfish.min.js"></script>
+    <script src="~/Scripts/jquery.ui.min.js"></script>
+    <script src="~/Scripts/plugins/rangeslider.min.js"></script>
+    <script src="~/Scripts/plugins/jquery.flexslider-min.js"></script>
+    <script src="~/Scripts/uou-accordions.js"></script>
+    <script src="~/Scripts/uou-tabs.js"></script>
+    <script src="~/Scripts/plugins/select2.min.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/gmap3.min.js"></script>
+    <script src="~/Scripts/scripts.js"></script>
+    <script>
+
+    </script>
+</body>
+
+<!-- Mirrored from new.uouapps.com/tiger-html/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Oct 2016 17:43:13 GMT -->
+</html>

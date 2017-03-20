@@ -1,0 +1,574 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>HuntSmart - Know before you go </title>
+  <link rel="shortcut icon" href="~/img/favicon-64x64.png">
+
+  <!-- Fonts -->
+  <link href="css/fonts.css" rel='stylesheet' type='text/css'>
+
+  <!-- Style Sheet -->
+  <link rel="stylesheet" href="~/Content/owl.carousel.css">
+  <link rel="stylesheet" href="~/Content/main-style.css">
+
+  <script src="~/Scripts/jquery.min.1.11.1.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="~/Content/navbar.css">
+  <link rel="stylesheet" type="text/css" href="~/Content/css">
+  <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+  <link rel="stylesheet" type="text/css" href="~/Content/font-awesome.min.css">
+  <link rel="stylesheet" href="~/Content/userprofile.css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+   
+  <script>
+$(document).ready(function () {
+    //for search button redirection
+
+      $('#search-button').click(function () {
+        
+        location.href = "/Home/companylist";
+        
+      })
+});
+</script>
+</head>
+
+<body>
+<div class="toolbar navbar navbar-inverse navbar-fixed-top opaque-navbar opaque">
+    <div class="uou-block-1a blog">
+      <div class="container" style="padding-top: 5px">
+        <div class="logo" style="float:left" >
+          <div class="navbar-header">
+            <a class="navbar-brand navbar-a-color" href="#" style="font-size: 38px;padding-left:0px;color:#ffffff;">Hunt Smart</a>
+          </div>
+        </div>
+        <form class="navbar-form navbar-left" id="search-field" role="search" action="/Home/companylist"  style="height:33px;width:561px;padding-left:30px;">
+          <div class="input-group stylish-input-group" style="height:33px;outline:aliceblue;">
+            <input type="text" class="form-control"  style="height:33px;width:450px;color:#545454;" placeholder="Search" >
+            <span class="input-group-addon">
+              <button title="Advanced Search">
+                <span class="glyphicon glyphicon-cog"></span>
+              </button>
+              <button type="submit" title="Search">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </form>
+
+
+                <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown">
+                <img src="~/images/avatar-2.jpg" class="img-circle special-img">
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login">
+                                
+                                        <p class="text-center">
+                                            <img src="~/images/avatar-2.jpg" style="height:90px">
+                                        </p>
+                                    
+                                        <p class="text-center"><strong>Saif Ullah</strong></p>
+                                        <p class="text-center small">crazytodevelop@gmail.com</p>
+                                        <p class="text-left">
+                                            <a href="/Home/userProfile" class="btn btn-primary btn-block btn-sm" style="background-color:#2dabff">Profile</a>
+                                        </p>
+                                    
+                            </div>
+                        </li>
+                        <li class="divider navbar-login-session-bg"></li>
+                        <li><a href="/Home/userDashboard">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                        <li class="divider"></li>
+                        <li><a href="/Home/index">Log Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+      </div>
+    </div>
+  </div>
+
+<div  id="main-wrapper">
+
+ <!------------------------------------------------------------------------------------------------------------------------------------->
+  <!-- Strat User Social profile-->
+
+  <div class="compny-profile">
+    <!--------------------------------------------------- SUB Banner Start--------------------------------------->
+    <div class="profile-bnr user-profile-bnr">
+      <div  class="container">
+        <div class="pull-left">
+          <h2>Wasim Anwar</h2>
+          <h5>Senior Software Engineer</h5>
+        </div>
+
+        <!-- Top Riht Button -->
+        <div class="right-top-bnr">
+          <div class="sidebar">
+                      <h2 class="main-title">Social Profiles</h2>
+                      <ul class="socil">
+                        <li><a href="#."><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#."><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#."><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#."><i class="fa fa-twitter"></i></a></li>
+                      </ul>
+           </div>
+        </div>
+
+      </div>
+    </div>
+      <!--------------------------------------------------- SUB Banner End--------------------------------------->
+   
+       <!----------------------------------------------- Profile Company Content -------------------------------->
+    <div class="profile-company-content user-profile main-user" data-bg-color="f5f5f5">
+      <div  class="container">
+        <div class="row">
+
+          <!---------------------- Nav Tabs ------------------>
+          <div class="col-md-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" onclick="location.href = '/Home/userProfile'">Profile</a></li>
+                <li><a data-toggle="tab" onclick="location.href = '/Home/experience'">Experience</a></li>
+		        <li><a data-toggle="tab" onclick="location.href = '/Home/userDashboard'">Dashboard</a></li>
+            </ul>
+          </div>
+           <!---------------------- Nav Tabs Ends ------------------>
+
+          <!-- ---------------------Tab Content --------------------->
+          <div class="col-md-12">
+              <div class="tab-content">
+
+                  <!-- PROFILE -->
+                  <div id="profile" class="tab-pane fade in active">
+                      <!-- ---------------------------ABOUT------------------------------------>
+                      <br />
+                      <div class="row">
+
+                          <div class="col-md-12">
+                              <div class="profile-main">
+                                  <div class="row">
+                                  <h3>About</h3>
+                                 
+                                  </div>
+
+                                 
+
+                                  <div class="row">
+
+                                      <div class="col-md-3">
+                                          <div class="profile-in">
+                                              <div class="media-left">
+                                                  <div class="img-profile"> <img id="coverphoto" class="media-object" src="~/images/avatar-1.jpg" alt=""> </div>
+                                              </div>
+                                              <div class="image-upload">
+                                                  <label for="file-input">
+                                                      <img id="profilephoto" src="~/images/camera1.png" />
+                                                  </label>
+
+                                                  <input id="file-input" onchange="readURL(this);" type="file" />
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="col-md-8">
+                                          <div class="sidebar">
+                                              <div class="row">
+                                                  <div class="col-md-10">
+                                                      <h5 class="main-title">Professional Details</h5>
+                                                  </div>
+                                                  <div class="col-sm-2">
+                                                      <a id="editprofileicon" onclick="javascript : editprofile()" href="#"><img src="~/images/edit-pencil2.png" /></a>
+                                                      <a id="editprofile" onclick="javascript : editprofile()" href="#">Edit</a>
+
+                                                  </div>
+                                              </div>
+
+                                              <div class="sidebar-information">
+                                                  <div class="container">
+
+                                                      <div class="form-group row">
+                                                          <label id="lbl" class="control-label col-sm-2" for="employeename">Name:</label>
+                                                          <div class="col-sm-5">
+                                                              <input id="employeename" name="employeename" value="Wasim Anwar" type="text" class="form-control w3-right" placeholder="Enter name" disabled>
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="form-group row">
+                                                          <label id="lbl" class="control-label col-sm-2" for="dob">Date Of Birth:</label>
+                                                          <div class="col-sm-5">
+                                                              <input id="dob" name="dob" type="date" class="form-control w3-right" placeholder="Enter Date Of Birth" disabled>
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="form-group row">
+                                                          <label id="lbl" class="control-label col-sm-2" for="contactno">Contact no:</label>
+                                                          <div class="col-sm-5">
+                                                              <input id="contactno" name="contactno" type="text" class="form-control w3-right" placeholder="Contact no." disabled>
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="row">
+                                                          <div class="col-sm-2"><p></p></div>
+                                                          <div class="col-md-5">
+                                                              <textarea id="profiledes" name="comment" rows="5" form="myform" placeholder="Description" disabled></textarea>
+                                                          </div>
+                                                      </div>
+
+                                                      <br />
+                                                      <br />
+                                                      <div class="row">
+                                                          <div class="col-sm-2"><p></p></div>
+                                                          <div class="col-sm-9">
+                                                              <button id="saveprofile" name="saveprofile" onclick="javacript: saveprofile()" value="saveprofile" class="btn btn-default">Save</button>
+                                                              <button id="cancleprofile" name="cancleprofile" onclick="javacript: cancleprofile()" value="cancleprofile" class="btn btn-default">Cancle</button>
+                                                          </div>
+
+                                                      </div>
+
+                                                  </div>
+
+                                              </div>
+
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                          <!-- ---------------------------ABOUT END------------------------------------>
+                          <br />
+                          <div class="container">
+                              <div class="row">
+
+                                  <div class="col-sm-12">
+
+                                      <div class="sidebar">
+                                          <div class="row">
+                                              <div class="main-title col-md-9"><h5>Education</h5></div>
+                                              <div style="margin-top:30px" class="col-sm-3">
+                                                  <a onclick="javascript: addeducation()" style="margin-left:25% " href="#addskill">
+                                                      <img src="~/images/plus.png" alt="image">
+                                                  </a>
+                                                  <a id="addskill" name="addskill" onclick="javascript: addeducation();">Add Education</a>
+                                              </div>
+                                          </div>
+
+                                          <div id="edu-detail" style="display:none">
+                                              <div style="margin-top:30px" class="col-md-12">
+                                                  <div class="sidebar">
+                                                      <div class="row">
+                                                          <div class="col-md-10">
+                                                              <h5 class="main-title">Educational Details</h5>
+                                                          </div>
+                                                          <div id="divEditEducation"style="visibility:hidden" class="col-sm-2">
+                                                              <a id="editeducationicon" onclick="javascript : editeducation()" href="#"><img src="~/images/edit-pencil2.png" /></a>
+                                                              <a id="edieducation" onclick="javascript : editeducation()" href="#divEditEducation">Edit</a>
+                                                          </div>
+                                                      </div>
+
+                                                      <div>
+                                                          <div class="container">
+
+                                                              <div class="form-group row">
+                                                                  <label id="lbl" class="control-label col-sm-2" for="school">School/Institute:</label>
+                                                                  <div class="col-sm-8">
+                                                                      <input id="school" name="school" type="text" class="form-control w3-right" placeholder="Enter School/Institute" >
+                                                                  </div>
+                                                              </div>
+
+                                                              <div class="form-group row">
+                                                                  <label id="lbl" class="control-label col-sm-2" for="edu-st-dt">Start Date:</label>
+                                                                  <div class="col-sm-8">
+                                                                      <input id="edu-st-dt" name="edu-st-dt" type="date" class="form-control w3-right" placeholder="Enter School Start date attended" >
+                                                                  </div>
+                                                              </div>
+
+                                                              <div class="form-group row">
+                                                                  <label id="lbl" class="control-label col-sm-2" for="edu-end-dt">End Date:</label>
+                                                                  <div class="col-sm-8">
+                                                                      <input id="edu-end-dt" name="edu-end-dt" type="date" class="form-control w3-right" placeholder="Enter School End date attended" >
+                                                                  </div>
+                                                              </div>
+                                                              <div class="form-group row">
+                                                                  <label id="lbl" class="control-label col-sm-2" for="degree">Degree:</label>
+                                                                  <div class="col-sm-8">
+                                                                      <input id="degree" name="degree" type="text" class="form-control w3-right" placeholder="Degree" >
+                                                                  </div>
+                                                              </div>
+
+                                                              <div class="form-group row">
+                                                                  <label id="lbl" class="control-label col-sm-2" for="studyfield">Field of Study</label>
+                                                                  <div class="col-sm-8">
+                                                                      <input id="studyfield" name="studyfield" type="text" class="form-control w3-right" placeholder="Field of Study" >
+                                                                  </div>
+                                                              </div>
+
+                                                              <div class="row">
+                                                                  <div class="col-sm-2"><p></p></div>
+                                                                  <div class="col-md-8">
+                                                                      <textarea id="edu-des" name="edu-des" rows="5" form="myform" placeholder="Description" ></textarea>
+                                                                  </div>
+                                                              </div>
+
+                                                              <br />
+                                                              <br />
+                                                              <div class="row">
+                                                                  <div class="col-sm-2"><p></p></div>
+                                                                  <div class="col-sm-9">
+                                                                      <button id="saveeducation" name="saveeducation" onclick="javacript: saveeducation()" value="save" class="btn btn-default">Save</button>
+                                                                      <button id="cancleeducation" name="cancleeducation" onclick="javacript: cancleeducation()" value="cancle" class="btn btn-default">Cancle</button>
+                                                                  </div>
+
+                                                              </div>
+
+                                                          </div>
+
+                                                      </div>
+
+                                                  </div>
+
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                  </div>
+                              </div>
+                            </div>
+                              <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                              <div class="col-md-12">
+                                  <div class="sidebar">
+                                      <div class="row">
+                                          <div class="col-md-10">
+                                              <h5 class="main-title">Professional Details</h5>
+                                          </div>
+                                          <div class="col-sm-2">
+                                              <a id="editeducationicon" onclick="javascript : editeducation()" href="#"><img src="~/images/edit-pencil2.png" /></a>
+                                              <a id="edieducation" onclick="javascript : editeducation()" href="#">Edit</a>
+
+                                          </div>
+                                      </div>
+
+                                      <div class="sidebar-information">
+                                          <div class="container">
+
+                                              <div class="form-group row">
+                                                  <label id="lbl" class="control-label col-sm-2" for="school">School/Institute:</label>
+                                                  <div class="col-sm-8">
+                                                      <input id="school" name="school" type="text" class="form-control w3-right" placeholder="Enter School/Institute" disabled>
+                                                  </div>
+                                              </div>
+
+                                              <div class="form-group row">
+                                                  <label id="lbl" class="control-label col-sm-2" for="edu-st-dt">Start Date:</label>
+                                                  <div class="col-sm-8">
+                                                      <input id="edu-st-dt" name="edu-st-dt" type="date" class="form-control w3-right" placeholder="Enter School Start date attended" disabled>
+                                                  </div>
+                                              </div>
+
+                                              <div class="form-group row">
+                                                  <label id="lbl" class="control-label col-sm-2" for="edu-end-dt">End Date:</label>
+                                                  <div class="col-sm-8">
+                                                      <input id="edu-end-dt" name="edu-end-dt" type="date" class="form-control w3-right" placeholder="Enter School End date attended" disabled>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group row">
+                                                  <label id="lbl" class="control-label col-sm-2" for="degree">Degree:</label>
+                                                  <div class="col-sm-8">
+                                                      <input id="degree" name="degree" type="text" class="form-control w3-right" placeholder="Degree" disabled>
+                                                  </div>
+                                              </div>
+
+                                              <div class="form-group row">
+                                                  <label id="lbl" class="control-label col-sm-2" for="studyfield">Field of Study</label>
+                                                  <div class="col-sm-8">
+                                                      <input id="studyfield" name="studyfield" type="text" class="form-control w3-right" placeholder="Field of Study" disabled>
+                                                  </div>
+                                              </div>
+
+                                              <div class="row">
+                                                  <div class="col-sm-2"><p></p></div>
+                                                  <div class="col-md-8">
+                                                      <textarea id="edu-des" name="edu-des" rows="5" form="myform" placeholder="Description" disabled></textarea>
+                                                  </div>
+                                              </div>
+
+                                              <br />
+                                              <br />
+                                              <div class="row">
+                                                  <div class="col-sm-2"><p></p></div>
+                                                  <div class="col-sm-9">
+                                                      <button id="saveprofile" name="saveeducation" onclick="javacript: saveeducation()" value="save" class="btn btn-default">Save</button>
+                                                      <button id="cancleprofile" name="cancleeducation" onclick="javacript: cancleeducation()" value="cancle" class="btn btn-default">Cancle</button>
+                                                  </div>
+
+                                              </div>
+
+                                          </div>
+
+                                      </div>
+
+                                  </div>
+                              </div>
+                                  <!-- -------------------------SKILLS   ------------------------------------>
+                                  <div class="container">
+                                      <div class="row">
+                                          <div class="col-md-12">
+
+                                              <!-- Skills -->
+                                              <div class="sidebar job-skills">
+                                                  <div class=" row">
+                                                      <h5 id="skill" class="main-title col-sm-9">Skills</h5>
+                                                      <div class="col-sm-3">
+                                                          <a onclick="javascript: ShowSkillField()" style="margin-left:25% " href="#skill">
+                                                              <img src="~/images/plus.png" alt="image">
+                                                          </a>
+                                                          <a id="addskill" name="addskill" onclick="javascript: ShowSkillField();">Add Skills</a>
+                                                      </div>
+
+                                                      <div>
+                                                          <div class="row">
+                                                              <div class="col-sm-6">
+                                                                  <input onkeyup="javascript: searchskill()" type="text" id="skillinput" placeholder="enter skill" disabled />
+                                                              </div>
+                                                              <div class="col-sm-6">
+                                                                  <button id="addskillbutton" onclick="javacript: AddSkill()" value="Add" class="btn btn-default" disabled>Add</button>
+                                                              </div>
+                                                          </div>
+                                                          <div class="row">
+                                                              <div id="skilllist">
+                                                                  <ul class="col-md-1" onclick="javacript: findskill()">
+                                                                      <li id="C++"><mark id="skillmark"><a id="skilllink">C++</a></mark></li>
+                                                                  </ul>
+                                                                  <a id="plus" onclick="javascript: AddSkill()" class="col-md-11" href="#skill">
+                                                                      <img src="~/images/plus.png" alt="image">
+                                                                  </a>
+                                                              </div>
+
+                                                          </div>
+                                                          <ul id="nosugessions">
+                                                              <li><a id="nosugessionlink">No Sugessions</a></li>
+                                                          </ul>
+                                                      </div>
+
+
+                                                      <div class="row">
+                                                          <div class="col-sm-8">
+                                                              <p></p>
+                                                          </div>
+                                                          <div class="col-sm-2">
+                                                              <a id="editimagelink" onclick="javascript: EditSkill()" class="col-md-11" href="#skill">
+                                                                  <img src="~/images/edit-pencil2.png" alt="image">
+                                                              </a>
+                                                          </div>
+                                                          <div class="col-sm-2"><a id="editskill" name="editskill" onclick="javascript: EditSkill();">Edit Skills</a></div>
+
+                                                      </div>
+
+                                                      <div style="margin-top:5px" class="sidebar">
+
+                                                          <div id="skillMain" class="row">
+                                                              <div class="col-sm-6">
+                                                                  <h6 class="sidebar"> C#</h6>
+                                                              </div>
+
+                                                              <a id="minus" class="col-md-6" href="#skill">
+                                                                  <img src="~/images/minus.png" alt="image">
+                                                              </a>
+                                                          </div>
+
+                                                          <div id="skillMain" class="row">
+                                                              <div style="margin-top:-2%" class="col-sm-6">
+                                                                  <h6 class="sidebar"> Html</h6>
+                                                              </div>
+                                                              <a id="minus1" class="col-md-6" style="visibility: hidden" href="#skill">
+                                                                  <img src="~/images/minus.png" alt="image">
+                                                              </a>
+                                                          </div>
+
+                                                          <div id="skillMain" class="row">
+                                                              <div style="margin-top:-2%" class="col-sm-6">
+                                                                  <h6 class="sidebar">Asp.net</h6>
+                                                              </div>
+                                                              <a id="minus2" class="col-md-6" style="visibility: hidden" href="#skill">
+                                                                  <img src="~/images/minus.png" alt="image">
+                                                              </a>
+                                                          </div>
+                                                          <div class="row">
+                                                              <div class="col-sm-6" id="skilldiv" style="visibility: hidden; margin-top: -2%">
+                                                                  <h6 class="sidebar">
+                                                                      C++
+                                                                  </h6>
+                                                              </div>
+                                                              <a onclick="javascript: RemoveSkill('skilldiv', 'minus3')" id="minus3" class="col-md-6" style="visibility: hidden" href=" #skill">
+                                                                  <img src="~/images/minus.png" alt="image">
+                                                              </a>
+                                                          </div>
+                                                      </div>
+                                                      <button id="save" name="save" type="submit" onclick="saveskill()" value="add" class="btn btn-default">Save</button>
+                                                      <button id="cancle" name="cancle" type="submit" onclick="cancleskill()" value="add" class="btn btn-default">Cancle</button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                 </div>
+                <!-- ---------------------------SKILL END------------------------------------>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+
+
+    <!-- FOOTER -->
+    <div class="uou-block-4a secondary dark" style="background-color:rgba(127,127,127,0.1);margin-top: 100px">
+      <div class="container">
+        <ul class="links">
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+        <p>Copyright &copy; 2016 <a href="#">TeamCodeJitters</a>. All Rights reserved.</p>
+      </div>
+    </div>
+
+<!-- Scripts -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="~/Scripts/jquery-2.1.3.min.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/plugins/superfish.min.js"></script>
+<script src="~/Scripts/jquery.ui.min.js"></script>
+<script src="~/Scripts/plugins/rangeslider.min.js"></script>
+<script src="~/Scripts/plugins/jquery.flexslider-min.js"></script>
+<script src="~/Scripts/uou-accordions.js"></script>
+<script src="~/Scripts/uou-tabs.js"></script>
+<script src="~/Scripts/plugins/select2.min.js"></script>
+<script src="~/Scripts/owl.carousel.min.js"></script>
+<script src="~/Scripts/gmap3.min.js"></script>
+<script src="~/Scripts/scripts.js"></script>
+<script src="~/Scripts/userprofile.js"></script>
+<script>
+
+</script>
+</body>
+
+<!-- Mirrored from new.uouapps.com/tiger-html/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Oct 2016 17:43:13 GMT -->
+</html>

@@ -1,0 +1,80 @@
+@import "http://fonts.googleapis.com/css?family=Droid+Serif";
+/* Above line is used for online google font */
+
+input[type=text] {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 96%;
+    border-radius: 5px;
+    border: 0;
+    padding: 5px 0;
+}
+
+#email {
+    padding-left: 10px;
+    color: #000;
+}
+#dialogEmail{
+    color:#fff;
+}
+
+input[type=submit] {
+    width: 30%;
+    border: 1px solid #59b4d4;
+    background: #0078a3;
+    color: #eee;
+    padding: 3px 0;
+    border-radius: 5px;
+    margin-left: 33%;
+    cursor: pointer;
+}
+
+    input[type=submit]:hover {
+        border: 1px solid #666;
+        background: #555;
+        color: #fff;
+    }
+
+.ui-dialog .ui-dialog-content {
+    padding: 2em;
+}
+
+.ui-widget {
+    font-family: 'Droid Serif',serif;
+    font-size: .8em;
+}
+
+.ui-widget-content {
+    background: rgba(0, 0, 0, 0.8);
+    color: #FFFFF0;
+}
+
+.ui-dialog {
+    left: 0;
+    outline: 0 none;
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+}
+
+    .ui-dialog .ui-dialog-content {
+        background: none repeat scroll 0 0 transparent;
+        border: 0 none;
+        overflow: auto;
+        position: relative;
+        padding: 0 !important;
+    }
+
+.ui-widget-header {
+    background: #0099FF;
+    border: 0;
+    color: #FFFFFF;
+    font-weight: normal;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    padding: 0.1em .5em;
+    position: relative;
+    font-size: 1em;
+    background: #0099FF;
+}

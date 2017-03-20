@@ -1,0 +1,450 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Top Companies - Hunt Smart</title>
+  <link rel="shortcut icon" href="~/img/favicon-64x64.png">
+
+  <!-- Fonts -->
+  <link href="~/Content/fonts.css" rel='stylesheet' type='text/css'>
+
+  <!-- Style Sheet -->
+  <link rel="stylesheet" href="~/Content/owl.carousel.css">
+  <link rel="stylesheet" href="~/Content/main-style.css">
+
+  <script src="~/Scripts/jquery.min.1.11.1.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="~/Content/navbar.css">
+  <link rel="stylesheet" type="text/css" href="~/Content/css">
+  <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+  <link rel="stylesheet" type="text/css" href="~/Content/font-awesome.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+  <style>
+    @@font-face {
+      font-family: 'fontello';
+      src: url('./~/fonts/fontello.eot?64394639');
+      src: url('./~/fonts/fontello.eot?64394639#iefix') format('embedded-opentype'),
+      url('./~/fonts/fontello.woff?64394639') format('woff'),
+      url('./~/fonts/fontello.ttf?64394639') format('truetype'),
+      url('./~/fonts/fontello.svg?64394639#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .demo-icon
+    {
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: .2em;
+
+      /* You can be more comfortable with increased icons size */
+      font-size: 500%;
+
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      /* Uncomment for 3D effect */
+      text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); 
+    }
+  </style>
+  <link rel="stylesheet" href="~/Content/animation.css"><!--[if IE 7]><link rel="stylesheet" href="~/Content/fontello-ie7.css"><![endif]-->
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+		//for search button redirection
+
+      $('#search-button').click(function () {
+        
+        location.href = "/Home/companylist";
+        
+      });
+	
+      $('.load-more-btn').click(function () {
+        $('.loader').show();
+        
+        setTimeout(function(){
+            $( "#toCopy" ).clone().appendTo( "#pasteHere" );
+            $('.loader').hide();},1000);
+      });
+    });
+  </script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="~/Scripts/navbar.js"></script>
+</head>
+
+<body>
+  <div class="toolbar navbar navbar-inverse navbar-fixed-top opaque-navbar opaque">
+    <div class="uou-block-1a blog">
+      <div class="container" style="padding-top: 5px">
+        <div class="logo" style="float:left" >
+          <div class="navbar-header">
+            <a class="navbar-brand navbar-a-color" href="#" style="font-size: 38px;padding-left:0px;color:#ffffff;">Hunt Smart</a>
+          </div>
+        </div>
+        <form class="navbar-form navbar-left" id="search-field" role="search" action="/Home/companylist"  style="height:33px;width:561px;padding-left:30px;">
+          <div class="input-group stylish-input-group" style="height:33px;outline:aliceblue;">
+            <input type="text" class="form-control"  style="height:33px;width:450px;color:#545454;" placeholder="Search" >
+            <span class="input-group-addon">
+              <button title="Advanced Search">
+                <span class="glyphicon glyphicon-cog"></span>
+              </button>
+              <button type="submit" title="Search">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </form>
+
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle navbar-a-color" data-toggle="dropdown" style="font-size: 30px; font-family: raleway;color:#ffffff;background-color: rgba(0,0,0,0);">Sign in<span class="caret"></span></a>
+            <ul id="login-dp" class="dropdown-menu">
+              <li>
+                <div class="row" style="margin: 0px">
+                  <div class="col-md-12">
+                    <form class="form" id="login-nav">
+
+                    <p id="errorMessage"></p>
+                      <div class="form-group" style="padding-top:8px">
+                        <label class="sr-only" for="exampleInputEmail2">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" required>
+                      </div>
+                      <div class="form-group"  style="padding-top:8px">
+                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                        <input type="password" style="color: black;" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                        <div class="row" >
+                          <div class="checkbox col-md-6">
+                            <label><input type="checkbox"><span style="padding-left: 10px;font-weight: 400">Remember me<span></label>
+                          </div>
+                          <div id="myBtn" class="col-md-6 text-right" style="font-size:12px;margin-top:10px;margin-bottom:10px"><a href="#">Forgot password ?</a></div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <button type="button" id="loginButton" class="btn btn-primary btn-block">Sign in</button>
+                      </div>
+                    </form>
+                    <div  style="text-align:center">OR</div>
+                    <div class="social-buttons"  style="padding-bottom:10px">
+                      <a href="#" class="btn btn-fb"><i class="fa fa-facebook" style="padding-right: 5px;"></i> Sign in with Facebook</a>
+                    </div>
+                  </div>
+                  <div class="bottom text-center">
+                    New on Hunt Smart ? <a href="/Home/register"><b>Create Account</b></a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+
+      </div>
+    </div>
+  </div>
+  <div id="main-wrapper">
+
+    <section class="pro-mem">
+      <div class="container pb30">
+        <div class="row" style="padding-bottom: 24px;padding-top: 24px;">
+          <div class="col-md-9">
+            <h2>Top Companies: </h2>
+          </div>
+        </div>
+
+        <!-- Members -->
+        <div id="pasteHere">
+          <div id="toCopy">
+            <div class="row" style="padding-top: 50px">
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-1.png" height="100" width="150" alt="">
+                  <h4><a = href="/Home/profile_company"> Confiz </a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-3.png" height="100" width="150" alt="">
+                  <h4><a = href="/Home/profile_company"> Netsol </a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-1.png" height="100" width="150" alt="">
+                  <h4><a  href="/Home/profile_company"> Systems Ltd</a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-3.png" height="100" width="150" alt="">
+                  <h4><a href="/Home/profile_company"> Ebryx </a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-3.png" height="100" width="150" alt="">
+                  <h4><a  href="/Home/profile_company"> MindStorm Studios </a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-1.png" height="100" width="150" alt="">
+                  <h4><a  href="/Home/profile_company"> Conrad Labs </a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-3.png" height="100" width="150" alt="">
+                  <h4><a href="/Home/profile_company"> TechLogix </a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-1.png" height="100" width="150" alt="">
+                  <h4><a  href="/Home/profile_company"> KalSoft </a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-1.png" height="100" width="150" alt="">
+                  <h4><a  href="/Home/profile_company"> Platalytics </a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-3.png" height="100" width="150" alt="">
+                  <h4><a  href="/Home/profile_company"> Arbisoft </a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-1.png" height="100" width="150" alt="">
+                  <h4><a  href="/Home/profile_company"> Xavor Technologies </a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+              <div class="col-sm-3">
+                <div class="uou-block-6a"> <img src="~/images/member-3.png" height="100" width="150" alt="">
+                  <h4><a  href="/Home/profile_company"> Elixir Inc. </a> </h4>
+                  <h6>
+                    <div class="row" style="padding-top: 0px;margin-left: 20%">
+                      <div class="col-md-2" style="float: left;margin-right:7%;padding-right:0px">Rating: </div>
+                      <div class="col-md-5" style="margin-left:0%;padding-left:0px;float:left;">
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-half-o" style="color:#2DABFF"></i>
+                        <i class="fa fa-star-o" style="color:#2DABFF"></i>
+                      </div>
+                    </div>
+                  </h6>
+                </div>
+                <!-- end .uou-block-6a -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <div class="text-center">
+    <div class="btn btn-inline load-more-btn">
+      <h4 style="padding-top: 60px; padding-bottom:20px;color:#333333">load more</h4>
+    </div>
+  </div>
+
+  <div title="Code: 0xe834" style="padding-top: 0px; display:none;padding-bottom:20px" class="text-center loader">
+    <i class="demo-icon animate-spin">&#xe834;</i>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="uou-block-4a secondary dark" style="background-color:rgba(127,127,127,0.1);margin-top: 100px">
+    <div class="container">
+      <ul class="links">
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <p>Copyright &copy; 2016 <a href="#">TeamCodeJitters</a>. All Rights reserved.</p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="~/Scripts/plugins/superfish.min.js"></script>
+  <script src="~/Scripts/plugins/rangeslider.min.js"></script>
+  <script src="~/Scripts/uou-accordions.js"></script>
+  <script src="~/Scripts/uou-tabs.js"></script>
+  <script src="~/Scripts/plugins/select2.min.js"></script>
+  <script src="~/Scripts/owl.carousel.min.js"></script>
+  <script src="~/Scripts/gmap3.min.js"></script>
+  <script src="~/Scripts/scripts.js"></script>
+  <script src="~/Scripts/bootstrap.min.3.3.2.js"></script>
+</body>
+
+</html>

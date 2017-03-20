@@ -1,0 +1,91 @@
+article, aside, figure, footer, header, hgroup,
+menu, nav, section {
+      display: block
+}
+  
+.image-upload > input {
+     display: none;
+}
+        
+li {
+       cursor: pointer;
+       cursor: hand
+}
+#coverphoto{
+
+	border-radius:15px;
+}
+#profilephoto{
+
+        margin-left:200px; 
+        margin-top:2px;
+}
+#skilllist{
+	visibility:hidden; 
+        margin-left:1.5%;
+}
+#skillmark{
+	color: #0099CC; 
+        border: 2px solid #0099CC;
+        border-radius:5px;
+}
+#skillinput{
+	color:black;
+    
+}
+#skilllink{
+	margin:10px;
+}
+#plus{
+	margin-top:7px;
+    margin-left:-3%;
+}
+#nosugessions{
+         visibility:hidden;
+}
+#nosugessionlink{
+	color:#0099CC;
+   
+}
+#editimagelink{
+	
+	margin-left:90%;
+}
+#editskill{
+	
+}
+#minus{
+	visibility: hidden;
+	margin-top:2% ;
+}
+#save, #cancle{
+	background-color:#0099CC;
+	color:white ; 
+	visibility:hidden;
+}
+#saveprofile, #cancleprofile{
+	background-color:#0099CC;
+	color:white ; 
+    visibility:hidden;
+
+}
+#addskillbutton,#submitreview{
+	background-color:#0099CC;
+	color:white ; 
+}
+
+#employeename, #dob, #contactno, #profiledes{
+    border-color:transparent;
+    color:black;
+}
+#school,#edu-st-dt,#edu-end-dt,#degree,#studyfield,#edu-des,#comment{
+    border: 2px solid #0099CC;
+    color:black;
+}
+#saveeducation,#cancleeducation{
+    background-color:#0099CC;
+	color:white ;
+}
+#reviewq{
+    color:white
+}
