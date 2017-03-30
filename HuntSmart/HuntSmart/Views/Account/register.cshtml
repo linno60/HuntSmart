@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿@model HuntSmart.Models.User
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -16,6 +17,11 @@
     <link rel="stylesheet" href="~/Content/main-style.css">
 
     <script src="~/Scripts/jquery.min.1.11.1.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script> 
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>   
 
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/navbar.css">
@@ -38,8 +44,14 @@
         
           location.href = "/Home/companylist";
         
-      });
+      })
+        });
     </script>
+    
+       
+  
+
+
 </head>
 
 <body>
@@ -85,7 +97,7 @@
                         <input type="password" style="color: black;" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
                         <div class="row" >
                           <div class="checkbox col-md-6">
-                            <label><input type="checkbox"><span style="padding-left: 10px;font-weight: 400">Remember me<span></label>
+                            <label><input type="checkbox"><span style="padding-left: 10px;font-weight: 400">Remember me</span></label>
                           </div>
                           <div id="myBtn" class="col-md-6 text-right" style="font-size:12px;margin-top:10px;margin-bottom:10px"><a href="#">Forgot password ?</a></div>
                         </div>
@@ -100,7 +112,7 @@
                     </div>
                   </div>
                   <div class="bottom text-center">
-                    New on Hunt Smart ? <a href="/Home/register"><b>Create Account</b></a>
+                    New on Hunt Smart ? <a href="/Account/register"><b>Create Account</b></a>
                   </div>
                 </div>
               </li>
@@ -128,7 +140,7 @@
                             <div class="text-area">
                                 <div class="position-center-center col-md-10">
                                     <h1> Here comes the social networking platform that you’ve been waiting for</h1>
-                                    <h6>A socail plateform for finding jobs which suits your need. </h6>
+                                    <h6>A social platform for finding jobs which suits your need. </h6>
                                 </div>
                             </div>
                         </div>
@@ -147,19 +159,62 @@
                                         </li>
                                         <!--<li class="active"><a href="#log-in">Member Login</a></li>-->
                                     </ul>
+                          /////////////////////////////////////////////////////////////////
+                                  <!-- REGISTER -->
+                         //////////////////////////////////////////////////////////////////
 
-                                    <!-- REGISTER -->
                                     <div class="content">
                                         <div id="register" class="active">
-                                            <form>
-                                                <input type="text" placeholder="Full Name">
-                                                <input type="email" placeholder="Email Address">
-                                                <input type="text" placeholder="Phone">
-                                                <input type="password" placeholder="Password">
-                                                <button onclick="location.href='/Home/index_l'" type="button"> Register </button>
-                                            </form>
-                                        </div>
+                                         @using (Html.BeginForm("register", "Account", FormMethod.Post, new { @id = "form1" }))
+                                         {
+
+                                            @Html.ValidationSummary(true)
+                                            @Html.TextBoxFor(model => model.User_FirstName, null, new { @class = "form-control", placeholder = "First Name", id = "firstname", name = "firstname", required = "required" })
+                                            <div style="color:red"> @Html.ValidationMessageFor(model => model.User_FirstName)</div>
+
+                                            @Html.TextBoxFor(model => model.User_LastName, null, new { @class = "form-control", placeholder = "Last Name", id = "lastname", name = "lastname", required = "required" })
+                                            <div style="color:red">
+                                            @Html.ValidationMessageFor(model => model.User_LastName)</div>
+
+                                            @Html.TextBoxFor(model => model.User_Email, null, new { @class = "form-control", type = "email", placeholder = "Email", required = "required" })
+                                            <div style="color:red">
+                                                @Html.ValidationMessageFor(model => model.User_Email)</div>
+                                                <p id="result"></p>
+
+                                                @Html.PasswordFor(model => model.User_Password, new { @class = "form-control", id = "pass", name = "pass", placeholder = "Password", required = "required" })
+                                            <div style="color:red">
+                                                @Html.ValidationMessageFor(model => model.User_Password)</div>
+                                                <div class="row">
+                                                    <div class="col-sm-1">
+
+                                                    </div>
+                                                    <div>
+                                                        <div style="margin-top:2%" class="col-sm-2"><p style="color:darkgray">Male</p></div>
+                                                        <div class="col-sm-2">@Html.RadioButtonFor(model => model.User_Gender, "male", new { @name = "gender" }) </div>
+                                                        
+                                                    </div>
+                                                    <div>
+                                                        <div style="margin-top:2%" class="col-sm-2"><p style="color:darkgrey">Female</p></div>
+                                                        <div class="col-sm-2">@Html.RadioButtonFor(model => model.User_Gender, "female", new { @name = "gender" })</div>
+                                                    </div>
+                                                </div>
+                                                <div style="color:red">
+                                                    @Html.ValidationMessageFor(model => model.User_Gender)
+                                                </div>
+
+                                                @Html.TextBoxFor(model => model.User_DOB, new { @class = "form-control", style = "color:white ", placeholder = "Date Of Birth", type = "date", id = "dob", name = "dob", required = "required" })
+                                            <div style="color:red">
+                                                @Html.ValidationMessageFor(model => model.User_DOB)
+                                            </div>
+
+                                                <button id="submit" type="submit" name="submit"> Register </button>
+                                                }
+
+                                            </div>
                                     </div>
+                      /////////////////////////////////////////////////////////////////////////
+
+                     /////////////////////////////////////////////////////////////////////////
                                 </div>
                             </div>
                         </div>
@@ -177,7 +232,44 @@
         <p>Copyright &copy; 2016 <a href="#">TeamCodeJitters</a>. All Rights reserved.</p>
       </div>
     </div>
-    <!--<script src="~/Scripts/jquery-2.1.3.min.js"></script>-->
+   
+    <!-- <script type="text/javascript">
+
+        $('#User_Email').keyup(function () {
+            var name = $('#User_Email').val();
+            var url = "/Account/IsEmailUnique";
+
+
+        $.get(url, { input: name }, function (data) {
+
+            if (data == "Email Available") {
+                $("#result").html("<span style='color:green'>Available</span>");
+                //  $("#User_Email").css('background-color', '#78965');
+            }
+            else {
+                $("#result").html("<span style='color:red'>Not Available</span>");
+                // $("#User_Email").css('background-color', '#e97878');
+            }
+        })
+    })
+    </script> -->
+    <script type="text/jscript">
+        $('#User_Email').focusout(function () {
+            var url = "/Account/IsEmailUnique";
+            var name = $('#User_Email').val();
+            $.get(url, { input: name }, function (data) {
+                if (data == "Email Available") {
+                    $("#result").html("<span style='color:green'></span>");
+                    $("#User_Email").css('background-color', '');
+                }
+                else {
+                    $("#result").html("<span style='color:red'></span>");
+                    $("#User_Email").css('background-color', '#e97878');
+                }
+            });
+        })
+    </script>
+    <script src="~/Scripts/jquery-2.1.3.min.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/plugins/superfish.min.js"></script>
     <script src="~/Scripts/jquery.ui.min.js"></script>
@@ -190,60 +282,8 @@
     <script src="~/Scripts/gmap3.min.js"></script>
     <script src="~/Scripts/scripts.js"></script>
 
-    <script>
-        $(document).ready(function () {
-			//for search button redirection
-
-      $('#search-button').click(function () {
-        
-        location.href = "/Home/companylist";
-        
-      });
-		
-            //alert("on ready called");
-            $("#dialog").dialog({
-                autoOpen: false,
-                modal: true,
-                resizable: true
-            });
-            $("#forgetEmail").on("click", function () {
-                $("#dialog").dialog("open");
-            });
-            //$("#forgetEmail").on("click", function () {
-            //    alert("-_-");
-            //    });
-
-            // Validating Form Fields.....
-            $("#submit").click(function (e) {
-                var email = $("#email").val();
-                var name = $("#name").val();
-                var emailReg = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
-                if (email === '' || name === '') {
-                    alert("Please fill all fields...!!!!!!");
-                    e.preventDefault();
-                } else if (!(email).match(emailReg)) {
-                    alert("Invalid Email...!!!!!!");
-                    e.preventDefault();
-                } else {
-                    alert("Form Submitted Successfully......");
-                }
-            });
-            console.log("ready!");
-            $("#loginButton").click(function () {
-                var email = $('#email').val();
-                var pass = $('#password').val();
-                if (email == "a@a.com" && pass == "123") {
-                    window.location.href = "/Home/index_l";
-                }
-                else {
-                    //alert("no correct info");
-                    $('#errorMessage').text("In Correct Info,Please Try Again");
-                    $('#errorMessage').css({ "font-size": "120%", "color": "red" });
-                }
-            });
-        });
-    </script>
+   
 </body>
 
-<!-- Mirrored from new.uouapps.com/tiger-html/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Oct 2016 17:43:13 GMT -->
+
 </html>

@@ -83,8 +83,28 @@ $(document).ready(function () {
                                             <img src="~/images/avatar-2.jpg" style="height:90px">
                                         </p>
                                     
-                                        <p class="text-center"><strong>Saif Ullah</strong></p>
-                                        <p class="text-center small">crazytodevelop@gmail.com</p>
+                                <div class="row">
+                                    @{
+                                        if (Session["l_fname"].ToString() != null)
+                                        {
+                                            <div>
+                                                <p class="text-center col-sm-2"><strong>@Session["l_fname"].ToString()</strong></p>
+                                            </div>
+                                        }
+                                    }
+                                    @{
+                                        if (Session["l_lname"].ToString() != null)
+                                        {
+                                            <div>
+                                                <p class="text-center col-sm-2"><strong>@Session["l_lname"].ToString()</strong></p>
+                                            </div>
+                                        }
+                                    }
+
+                                </div>
+                               
+                                        <p class="text-center small"></p>
+                                    
                                         <p class="text-left">
                                             <a href="/Home/userProfile" class="btn btn-primary btn-block btn-sm" style="background-color:#2dabff">Profile</a>
                                         </p>
@@ -114,22 +134,14 @@ $(document).ready(function () {
     <div class="profile-bnr user-profile-bnr">
       <div  class="container">
         <div class="pull-left">
-          <h2>Wasim Anwar</h2>
-          <h5>Senior Software Engineer</h5>
+            <div class="row">
+                               <div><h2 class="text-center col-sm-2"><strong></strong></h2></div>
+                <div><h2 class="text-center col-sm-2"><strong></strong></h2></div>
+            </div>
+          <h5>designation</h5>
         </div>
 
-        <!-- Top Riht Button -->
-        <div class="right-top-bnr">
-          <div class="sidebar">
-                      <h2 class="main-title">Social Profiles</h2>
-                      <ul class="socil">
-                        <li><a href="#."><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#."><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#."><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#."><i class="fa fa-twitter"></i></a></li>
-                      </ul>
-           </div>
-        </div>
+       
 
       </div>
     </div>
@@ -203,30 +215,36 @@ $(document).ready(function () {
                                                   <div class="container">
 
                                                       <div class="form-group row">
-                                                          <label id="lbl" class="control-label col-sm-2" for="employeename">Name:</label>
+                                                          <label id="lbl" class="control-label col-sm-2" for="employeename">First Name:</label>
                                                           <div class="col-sm-5">
-                                                              <input id="employeename" name="employeename" value="Wasim Anwar" type="text" class="form-control w3-right" placeholder="Enter name" disabled>
+                                                              <input id="employeename" name="employeename" value="lname" type="text" class="form-control w3-right" placeholder="Enter name" disabled>
+                                                          </div>
+                                                      </div>
+                                                      <div class="form-group row">
+                                                          <label id="lbl" class="control-label col-sm-2" for="employeename">Last Name:</label>
+                                                          <div class="col-sm-5">
+                                                              <input id="employeename" name="employeename" value="" type="text" class="form-control w3-right" placeholder="Enter name" disabled>
                                                           </div>
                                                       </div>
 
                                                       <div class="form-group row">
                                                           <label id="lbl" class="control-label col-sm-2" for="dob">Date Of Birth:</label>
                                                           <div class="col-sm-5">
-                                                              <input id="dob" name="dob" type="date" class="form-control w3-right" placeholder="Enter Date Of Birth" disabled>
+                                                              <input id="dob" name="dob" type="date" value="" class="form-control w3-right" placeholder="Enter Date Of Birth" disabled>
                                                           </div>
                                                       </div>
 
                                                       <div class="form-group row">
                                                           <label id="lbl" class="control-label col-sm-2" for="contactno">Contact no:</label>
                                                           <div class="col-sm-5">
-                                                              <input id="contactno" name="contactno" type="text" class="form-control w3-right" placeholder="Contact no." disabled>
+                                                              <input id="contactno" name="contactno" value="" type="text" class="form-control w3-right" placeholder="Contact no." disabled>
                                                           </div>
                                                       </div>
 
                                                       <div class="row">
                                                           <div class="col-sm-2"><p></p></div>
                                                           <div class="col-md-5">
-                                                              <textarea id="profiledes" name="comment" rows="5" form="myform" placeholder="Description" disabled></textarea>
+                                                              <textarea id="profiledes" name="comment"  rows="5" form="myform" placeholder="Description" disabled></textarea>
                                                           </div>
                                                       </div>
 

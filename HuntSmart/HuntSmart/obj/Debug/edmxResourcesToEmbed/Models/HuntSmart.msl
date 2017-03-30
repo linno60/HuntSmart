@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HuntSmartModelStoreContainer" CdmEntityContainer="HuntSmartEntities1">
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="HuntSmartModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="Comment_Id" ColumnName="Comment_Id" />
+          <ScalarProperty Name="Comment_Description" ColumnName="Comment_Description" />
+          <ScalarProperty Name="Comment_Time" ColumnName="Comment_Time" />
+          <ScalarProperty Name="Comment_ReviewId" ColumnName="Comment_ReviewId" />
+          <ScalarProperty Name="Comment_UserId" ColumnName="Comment_UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="HuntSmartModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+          <ScalarProperty Name="Company_Description" ColumnName="Company_Description" />
+          <ScalarProperty Name="Company_Logo" ColumnName="Company_Logo" />
+          <ScalarProperty Name="Company_CoverPhoto" ColumnName="Company_CoverPhoto" />
+          <ScalarProperty Name="Company_Location" ColumnName="Company_Location" />
+          <ScalarProperty Name="Company_Website" ColumnName="Company_Website" />
+          <ScalarProperty Name="Company_Contact" ColumnName="Company_Contact" />
+          <ScalarProperty Name="Company_CRating" ColumnName="Company_CRating" />
+          <ScalarProperty Name="Company_NoOfEmployees" ColumnName="Company_NoOfEmployees" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Educations">
+      <EntityTypeMapping TypeName="HuntSmartModel.Education">
+        <MappingFragment StoreEntitySet="Education">
+          <ScalarProperty Name="Education_Id" ColumnName="Education_Id" />
+          <ScalarProperty Name="Education_UserId" ColumnName="Education_UserId" />
+          <ScalarProperty Name="Education_DegreeName" ColumnName="Education_DegreeName" />
+          <ScalarProperty Name="Education_InstituteName" ColumnName="Education_InstituteName" />
+          <ScalarProperty Name="Education_StartDate" ColumnName="Education_StartDate" />
+          <ScalarProperty Name="Education_EndDate" ColumnName="Education_EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailVerificationCodes">
+      <EntityTypeMapping TypeName="HuntSmartModel.EmailVerificationCode">
+        <MappingFragment StoreEntitySet="EmailVerificationCode">
+          <ScalarProperty Name="EmailVerifiationCode_Id" ColumnName="EmailVerifiationCode_Id" />
+          <ScalarProperty Name="EmailVerificationCode_Value" ColumnName="EmailVerificationCode_Value" />
+          <ScalarProperty Name="EmailVerificationCode_CreationTime" ColumnName="EmailVerificationCode_CreationTime" />
+          <ScalarProperty Name="EmailVerificationCode_UserId" ColumnName="EmailVerificationCode_UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Experiences">
+      <EntityTypeMapping TypeName="HuntSmartModel.Experience">
+        <MappingFragment StoreEntitySet="Experience">
+          <ScalarProperty Name="Exp_Id" ColumnName="Exp_Id" />
+          <ScalarProperty Name="Exp_CompanyId" ColumnName="Exp_CompanyId" />
+          <ScalarProperty Name="Exp_UserId" ColumnName="Exp_UserId" />
+          <ScalarProperty Name="Exp_StartDate" ColumnName="Exp_StartDate" />
+          <ScalarProperty Name="Exp_EndDate" ColumnName="Exp_EndDate" />
+          <ScalarProperty Name="Exp_Designation" ColumnName="Exp_Designation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewCompanies">
+      <EntityTypeMapping TypeName="HuntSmartModel.NewCompany">
+        <MappingFragment StoreEntitySet="NewCompany">
+          <ScalarProperty Name="NewCompany_Id" ColumnName="NewCompany_Id" />
+          <ScalarProperty Name="NewCompany_CompanyId" ColumnName="NewCompany_CompanyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PasswordVerificationCodes">
+      <EntityTypeMapping TypeName="HuntSmartModel.PasswordVerificationCode">
+        <MappingFragment StoreEntitySet="PasswordVerificationCode">
+          <ScalarProperty Name="PasswordVerificationCode_Id" ColumnName="PasswordVerificationCode_Id" />
+          <ScalarProperty Name="PasswordVerificationCode_Value" ColumnName="PasswordVerificationCode_Value" />
+          <ScalarProperty Name="PasswordVerificationCode_CreationTime" ColumnName="PasswordVerificationCode_CreationTime" />
+          <ScalarProperty Name="PasswordVerificationCode_UserId" ColumnName="PasswordVerificationCode_UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PopularCompanies">
+      <EntityTypeMapping TypeName="HuntSmartModel.PopularCompany">
+        <MappingFragment StoreEntitySet="PopularCompany">
+          <ScalarProperty Name="PopularCompany_Id" ColumnName="PopularCompany_Id" />
+          <ScalarProperty Name="PopularCompany_CompanyId" ColumnName="PopularCompany_CompanyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RatingQuestions">
+      <EntityTypeMapping TypeName="HuntSmartModel.RatingQuestion">
+        <MappingFragment StoreEntitySet="RatingQuestion">
+          <ScalarProperty Name="RatingQuestion_Id" ColumnName="RatingQuestion_Id" />
+          <ScalarProperty Name="RatingQuestion_Statement" ColumnName="RatingQuestion_Statement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RatingResponses">
+      <EntityTypeMapping TypeName="HuntSmartModel.RatingResponse">
+        <MappingFragment StoreEntitySet="RatingResponse">
+          <ScalarProperty Name="RatingResponse_Id" ColumnName="RatingResponse_Id" />
+          <ScalarProperty Name="RatingResponse_ReviewId" ColumnName="RatingResponse_ReviewId" />
+          <ScalarProperty Name="RatingResponse_RatingQuestionId" ColumnName="RatingResponse_RatingQuestionId" />
+          <ScalarProperty Name="RatingResponse_Result" ColumnName="RatingResponse_Result" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Replies">
+      <EntityTypeMapping TypeName="HuntSmartModel.Reply">
+        <MappingFragment StoreEntitySet="Reply">
+          <ScalarProperty Name="Reply_Id" ColumnName="Reply_Id" />
+          <ScalarProperty Name="Reply_Description" ColumnName="Reply_Description" />
+          <ScalarProperty Name="Reply_Time" ColumnName="Reply_Time" />
+          <ScalarProperty Name="Reply_CommentId" ColumnName="Reply_CommentId" />
+          <ScalarProperty Name="Reply_UserId" ColumnName="Reply_UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="HuntSmartModel.Review">
+        <MappingFragment StoreEntitySet="Review">
+          <ScalarProperty Name="Review_Id" ColumnName="Review_Id" />
+          <ScalarProperty Name="Review_CompanyId" ColumnName="Review_CompanyId" />
+          <ScalarProperty Name="Review_UserId" ColumnName="Review_UserId" />
+          <ScalarProperty Name="Review_CRating" ColumnName="Review_CRating" />
+          <ScalarProperty Name="Review_Feedback" ColumnName="Review_Feedback" />
+          <ScalarProperty Name="Review_Time" ColumnName="Review_Time" />
+          <ScalarProperty Name="Review_UserPrivacyStatus" ColumnName="Review_UserPrivacyStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="HuntSmartModel.Skill">
+        <MappingFragment StoreEntitySet="Skill">
+          <ScalarProperty Name="Skill_Id" ColumnName="Skill_Id" />
+          <ScalarProperty Name="Skill_Name" ColumnName="Skill_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopCompanies">
+      <EntityTypeMapping TypeName="HuntSmartModel.TopCompany">
+        <MappingFragment StoreEntitySet="TopCompany">
+          <ScalarProperty Name="TopCompany_Id" ColumnName="TopCompany_Id" />
+          <ScalarProperty Name="TopCompany_CompanyId" ColumnName="TopCompany_CompanyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HuntSmartModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="User_FirstName" ColumnName="User_FirstName" />
+          <ScalarProperty Name="User_LastName" ColumnName="User_LastName" />
+          <ScalarProperty Name="User_Email" ColumnName="User_Email" />
+          <ScalarProperty Name="User_EmailVerifStatus" ColumnName="User_EmailVerifStatus" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="User_Description" ColumnName="User_Description" />
+          <ScalarProperty Name="User_ContactNo" ColumnName="User_ContactNo" />
+          <ScalarProperty Name="User_Gender" ColumnName="User_Gender" />
+          <ScalarProperty Name="User_DOB" ColumnName="User_DOB" />
+          <ScalarProperty Name="User_Dp" ColumnName="User_Dp" />
+          <ScalarProperty Name="User_CoverPhoto" ColumnName="User_CoverPhoto" />
+          <ScalarProperty Name="User_AccountCreationDate" ColumnName="User_AccountCreationDate" />
+          <ScalarProperty Name="User_EmailPrivacyStatus" ColumnName="User_EmailPrivacyStatus" />
+          <ScalarProperty Name="User_ContactNoPrivacyStatus" ColumnName="User_ContactNoPrivacyStatus" />
+          <ScalarProperty Name="User_DOBPrivacyStatus" ColumnName="User_DOBPrivacyStatus" />
+          <ScalarProperty Name="User_NamePrivacyStatus" ColumnName="User_NamePrivacyStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSkills">
+      <EntityTypeMapping TypeName="HuntSmartModel.UserSkill">
+        <MappingFragment StoreEntitySet="UserSkill">
+          <ScalarProperty Name="UserSkill_Id" ColumnName="UserSkill_Id" />
+          <ScalarProperty Name="UserSkill_SkillId" ColumnName="UserSkill_SkillId" />
+          <ScalarProperty Name="UserSkill_UserId" ColumnName="UserSkill_UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

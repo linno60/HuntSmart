@@ -77,9 +77,23 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -129,6 +143,10 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -193,15 +211,84 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Comment.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Company.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Education.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailVerificationCode.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Experience.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HuntSmart.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HuntSmart.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HuntSmart.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HuntSmart.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HuntSmart.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IProfile.cs" />
+    <Compile Include="Models\IRegister.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NewCompany.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PasswordVerificationCode.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PopularCompany.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfileRepository.cs" />
+    <Compile Include="Models\RatingQuestion.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RatingResponse.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RegisterRepository.cs" />
+    <Compile Include="Models\Reply.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Review.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Skill.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TopCompany.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserSkill.cs">
+      <DependentUpon>HuntSmart.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -337,6 +424,16 @@
     <Content Include="img\portfolio-8.jpg" />
     <Content Include="img\pricing-table-bg.jpg" />
     <Content Include="img\slider-img\slider-bg-11.jpg" />
+    <Content Include="Models\HuntSmart.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HuntSmart.edmx</DependentUpon>
+      <LastGenOutput>HuntSmart.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\HuntSmart.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HuntSmart.edmx</DependentUpon>
+      <LastGenOutput>HuntSmart.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.3.2.0.js" />
     <Content Include="Scripts\bootstrap.min.3.3.2.js" />
@@ -382,6 +479,13 @@
     <Content Include="img\Thumbs.db" />
     <Content Include="Images\Thumbs.db" />
     <Content Include="Images\flags\32\Thumbs.db" />
+    <EntityDeploy Include="Models\HuntSmart.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HuntSmart.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\HuntSmart.edmx.diagram">
+      <DependentUpon>HuntSmart.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\dialog.js" />
@@ -392,6 +496,8 @@
     <Content Include="Scripts\jquery-2.1.3.min.js" />
     <Content Include="Scripts\jquery.min.1.11.1.js" />
     <Content Include="Scripts\jquery.ui.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -407,6 +513,8 @@
     <Content Include="Scripts\uou-tabs.js" />
     <Content Include="Scripts\userprofile.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Account\VerifyEmail.cshtml" />
+    <Content Include="Views\Account\loginf.cshtml" />
     <None Include="Views\Home\companylist_l.cshtml" />
     <None Include="Views\Home\companylist.cshtml" />
     <None Include="Views\Home\email.cshtml" />
@@ -422,7 +530,7 @@
     <None Include="Views\Home\privacy.cshtml" />
     <None Include="Views\Home\profile_company_l.cshtml" />
     <None Include="Views\Home\profile_company.cshtml" />
-    <None Include="Views\Home\register.cshtml" />
+    <None Include="Views\Account\register.cshtml" />
     <None Include="Views\Home\topCompanies_l.cshtml" />
     <None Include="Views\Home\topCompanies.cshtml" />
     <None Include="Views\Home\userProfile.cshtml" />
@@ -435,11 +543,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\rAF.js.download" />
     <Content Include="Scripts\TweenLite.min.js.download" />
     <Content Include="Views\Home\config.json" />
@@ -447,6 +550,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\plugins\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -455,6 +559,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

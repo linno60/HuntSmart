@@ -1,0 +1,108 @@
+﻿@model HuntSmart.Models.User
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Hunt Smart - Know before you go</title>
+    <link rel="shortcut icon" href="~/img/favicon-64x64.png">
+
+    <!-- Fonts -->
+    <link href="~/Content/fonts.css" rel='stylesheet' type='text/css'>
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="~/Content/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/main-style.css">
+
+    <script src="~/Scripts/jquery.min.1.11.1.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/normalize.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/demo.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/component.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/navbar.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css">
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" async="" src="~/Scripts/ga.js.download"></script>
+    <script type="text/javascript"></script>
+<script src="~/Scripts/navbar.js"></script>
+</head>
+<body>
+    <div class="toolbar navbar navbar-inverse navbar-fixed-top opaque-navbar opaque">
+        <div class="uou-block-1a blog">
+            <div class="container" style="padding-top: 5px">
+                <div class="logo" style="float:left">
+                    <div class="navbar-header">
+                        <a class="navbar-brand navbar-a-color" href="#" style="font-size: 38px;padding-left:0px;color:#ffffff;">Hunt Smart</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    <center>
+                        <div style="width:40%; margin-top:10%">
+                            <div class="col-md-12">
+                                <h4 style="color:red">wrong username or password</h4>
+                                <!-----------------/////////////////////////////////////------------------->
+                                <h2>Login here</h2>
+                                
+                                <form class="form" action="/Account/login" method="post" id="login">
+
+
+
+                                    <div class="form-group" style="padding-top:8px">
+                                        <input type="email" class="form-control" id="loginemail" name="loginemail" placeholder="Email" required>
+                                    </div>
+
+                                    <div class="form-group" style="padding-top:8px">
+                                        <input type="password" style="color: black;" class="form-control" id="loginpass" name="loginpass" placeholder="Password" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" id="loginButton" class="btn btn-primary btn-block">Sign in</button>
+                                    </div>
+                                </form>
+                                <!-----------------/////////////////////////////////////------------------->
+
+                            </div>
+                            <div class="bottom text-center">
+                                <h4> New on Hunt Smart ? <a href="/Account/register"><b>Create Account</b></a></h4>
+                            </div>
+                        </div>
+                    </center>
+                    <!-- FOOTER -->
+                    <div class="uou-block-4a secondary dark" style="background-color:rgba(127,127,127,0.1);margin-top: 100px">
+                        <div class="container">
+                            <ul class="links">
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                            <p>Copyright &copy; 2016 <a href="#">TeamCodeJitters</a>. All Rights reserved.</p>
+                        </div>
+                    </div>
+
+
+                    <script src="~/Scripts/TweenLite.min.js.download"></script>
+                    <script src="~/Scripts/EasePack.min.js.download"></script>
+                    <script src="~/Scripts/rAF.js.download"></script>
+                    <script src="~/Scripts/demo-1.js.download"></script>
+                    <script src="~/Scripts/bootstrap.min.3.3.2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HuntSmartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="Comment_Id" />
+    </Key>
+    <Property Name="Comment_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comment_Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="Comment_Time" Type="datetime" Nullable="false" />
+    <Property Name="Comment_ReviewId" Type="int" Nullable="false" />
+    <Property Name="Comment_UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Company_Id" />
+    </Key>
+    <Property Name="Company_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Company_Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="Company_Logo" Type="varchar(max)" />
+    <Property Name="Company_CoverPhoto" Type="varchar(max)" />
+    <Property Name="Company_Location" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Company_Website" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Company_Contact" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Company_CRating" Type="float" Nullable="false" />
+    <Property Name="Company_NoOfEmployees" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="Education_Id" />
+    </Key>
+    <Property Name="Education_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Education_UserId" Type="int" Nullable="false" />
+    <Property Name="Education_DegreeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Education_InstituteName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Education_StartDate" Type="date" Nullable="false" />
+    <Property Name="Education_EndDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailVerificationCode">
+    <Key>
+      <PropertyRef Name="EmailVerifiationCode_Id" />
+    </Key>
+    <Property Name="EmailVerifiationCode_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmailVerificationCode_Value" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmailVerificationCode_CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="EmailVerificationCode_UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Experience">
+    <Key>
+      <PropertyRef Name="Exp_Id" />
+    </Key>
+    <Property Name="Exp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Exp_CompanyId" Type="int" Nullable="false" />
+    <Property Name="Exp_UserId" Type="int" Nullable="false" />
+    <Property Name="Exp_StartDate" Type="date" Nullable="false" />
+    <Property Name="Exp_EndDate" Type="date" Nullable="false" />
+    <Property Name="Exp_Designation" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewCompany">
+    <Key>
+      <PropertyRef Name="NewCompany_Id" />
+    </Key>
+    <Property Name="NewCompany_Id" Type="int" Nullable="false" />
+    <Property Name="NewCompany_CompanyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PasswordVerificationCode">
+    <Key>
+      <PropertyRef Name="PasswordVerificationCode_Id" />
+    </Key>
+    <Property Name="PasswordVerificationCode_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PasswordVerificationCode_Value" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PasswordVerificationCode_CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="PasswordVerificationCode_UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PopularCompany">
+    <Key>
+      <PropertyRef Name="PopularCompany_Id" />
+    </Key>
+    <Property Name="PopularCompany_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PopularCompany_CompanyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RatingQuestion">
+    <Key>
+      <PropertyRef Name="RatingQuestion_Id" />
+    </Key>
+    <Property Name="RatingQuestion_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RatingQuestion_Statement" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RatingResponse">
+    <Key>
+      <PropertyRef Name="RatingResponse_Id" />
+    </Key>
+    <Property Name="RatingResponse_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RatingResponse_ReviewId" Type="int" Nullable="false" />
+    <Property Name="RatingResponse_RatingQuestionId" Type="int" Nullable="false" />
+    <Property Name="RatingResponse_Result" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reply">
+    <Key>
+      <PropertyRef Name="Reply_Id" />
+    </Key>
+    <Property Name="Reply_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reply_Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="Reply_Time" Type="datetime" Nullable="false" />
+    <Property Name="Reply_CommentId" Type="int" Nullable="false" />
+    <Property Name="Reply_UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="Review_Id" />
+    </Key>
+    <Property Name="Review_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Review_CompanyId" Type="int" Nullable="false" />
+    <Property Name="Review_UserId" Type="int" Nullable="false" />
+    <Property Name="Review_CRating" Type="float" Nullable="false" />
+    <Property Name="Review_Feedback" Type="varchar(max)" Nullable="false" />
+    <Property Name="Review_Time" Type="datetime" Nullable="false" />
+    <Property Name="Review_UserPrivacyStatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="Skill_Id" />
+    </Key>
+    <Property Name="Skill_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Skill_Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TopCompany">
+    <Key>
+      <PropertyRef Name="TopCompany_Id" />
+    </Key>
+    <Property Name="TopCompany_Id" Type="int" Nullable="false" />
+    <Property Name="TopCompany_CompanyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="User_LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="User_Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="User_EmailVerifStatus" Type="bit" Nullable="false" />
+    <Property Name="User_Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="User_Description" Type="varchar(max)" />
+    <Property Name="User_ContactNo" Type="varchar" MaxLength="50" />
+    <Property Name="User_Gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="User_DOB" Type="datetime" Nullable="false" />
+    <Property Name="User_Dp" Type="varchar(max)" />
+    <Property Name="User_CoverPhoto" Type="varchar(max)" />
+    <Property Name="User_AccountCreationDate" Type="datetime" Nullable="false" />
+    <Property Name="User_EmailPrivacyStatus" Type="bit" Nullable="false" />
+    <Property Name="User_ContactNoPrivacyStatus" Type="bit" Nullable="false" />
+    <Property Name="User_DOBPrivacyStatus" Type="bit" Nullable="false" />
+    <Property Name="User_NamePrivacyStatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSkill">
+    <Key>
+      <PropertyRef Name="UserSkill_Id" />
+    </Key>
+    <Property Name="UserSkill_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserSkill_SkillId" Type="int" Nullable="false" />
+    <Property Name="UserSkill_UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Comment_Reply">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+    <End Role="Reply" Type="Self.Reply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="Comment_Id" />
+      </Principal>
+      <Dependent Role="Reply">
+        <PropertyRef Name="Reply_CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_PopularCompany">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="PopularCompany" Type="Self.PopularCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Company_Id" />
+      </Principal>
+      <Dependent Role="PopularCompany">
+        <PropertyRef Name="PopularCompany_CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Review">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Company_Id" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="Review_CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_TopCompany">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="TopCompany" Type="Self.TopCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Company_Id" />
+      </Principal>
+      <Dependent Role="TopCompany">
+        <PropertyRef Name="TopCompany_CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Experience_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Experience" Type="Self.Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Company_Id" />
+      </Principal>
+      <Dependent Role="Experience">
+        <PropertyRef Name="Exp_CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Experience_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Experience" Type="Self.Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Experience">
+        <PropertyRef Name="Exp_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewCompany_NewCompany">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="NewCompany" Type="Self.NewCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Company_Id" />
+      </Principal>
+      <Dependent Role="NewCompany">
+        <PropertyRef Name="NewCompany_CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RatingQuestion_RatingResponse">
+    <End Role="RatingQuestion" Type="Self.RatingQuestion" Multiplicity="1" />
+    <End Role="RatingResponse" Type="Self.RatingResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RatingQuestion">
+        <PropertyRef Name="RatingQuestion_Id" />
+      </Principal>
+      <Dependent Role="RatingResponse">
+        <PropertyRef Name="RatingResponse_RatingQuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_Comment">
+    <End Role="Review" Type="Self.Review" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Review">
+        <PropertyRef Name="Review_Id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="Comment_ReviewId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_RatingResponse">
+    <End Role="Review" Type="Self.Review" Multiplicity="1" />
+    <End Role="RatingResponse" Type="Self.RatingResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Review">
+        <PropertyRef Name="Review_Id" />
+      </Principal>
+      <Dependent Role="RatingResponse">
+        <PropertyRef Name="RatingResponse_ReviewId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Comment">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="Comment_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Education">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Education" Type="Self.Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Education">
+        <PropertyRef Name="Education_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_EmailVerificationCode">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="EmailVerificationCode" Type="Self.EmailVerificationCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="EmailVerificationCode">
+        <PropertyRef Name="EmailVerificationCode_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_PasswordVerificationCode">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="PasswordVerificationCode" Type="Self.PasswordVerificationCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="PasswordVerificationCode">
+        <PropertyRef Name="PasswordVerificationCode_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Reply">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Reply" Type="Self.Reply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Reply">
+        <PropertyRef Name="Reply_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Review">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="Review_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserSkill_Skill">
+    <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+    <End Role="UserSkill" Type="Self.UserSkill" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Skill">
+        <PropertyRef Name="Skill_Id" />
+      </Principal>
+      <Dependent Role="UserSkill">
+        <PropertyRef Name="UserSkill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserSkill_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserSkill" Type="Self.UserSkill" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="UserSkill">
+        <PropertyRef Name="UserSkill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HuntSmartModelStoreContainer">
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailVerificationCode" EntityType="Self.EmailVerificationCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewCompany" EntityType="Self.NewCompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PasswordVerificationCode" EntityType="Self.PasswordVerificationCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PopularCompany" EntityType="Self.PopularCompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RatingQuestion" EntityType="Self.RatingQuestion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RatingResponse" EntityType="Self.RatingResponse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reply" EntityType="Self.Reply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TopCompany" EntityType="Self.TopCompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserSkill" EntityType="Self.UserSkill" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Comment_Reply" Association="Self.FK_Comment_Reply">
+      <End Role="Comment" EntitySet="Comment" />
+      <End Role="Reply" EntitySet="Reply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_PopularCompany" Association="Self.FK_Company_PopularCompany">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="PopularCompany" EntitySet="PopularCompany" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Review" Association="Self.FK_Company_Review">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_TopCompany" Association="Self.FK_Company_TopCompany">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="TopCompany" EntitySet="TopCompany" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Experience_Company" Association="Self.FK_Experience_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Experience" EntitySet="Experience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Experience_User" Association="Self.FK_Experience_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Experience" EntitySet="Experience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewCompany_NewCompany" Association="Self.FK_NewCompany_NewCompany">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="NewCompany" EntitySet="NewCompany" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RatingQuestion_RatingResponse" Association="Self.FK_RatingQuestion_RatingResponse">
+      <End Role="RatingQuestion" EntitySet="RatingQuestion" />
+      <End Role="RatingResponse" EntitySet="RatingResponse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_Comment" Association="Self.FK_Review_Comment">
+      <End Role="Review" EntitySet="Review" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_RatingResponse" Association="Self.FK_Review_RatingResponse">
+      <End Role="Review" EntitySet="Review" />
+      <End Role="RatingResponse" EntitySet="RatingResponse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Comment" Association="Self.FK_User_Comment">
+      <End Role="User" EntitySet="User" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Education" Association="Self.FK_User_Education">
+      <End Role="User" EntitySet="User" />
+      <End Role="Education" EntitySet="Education" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_EmailVerificationCode" Association="Self.FK_User_EmailVerificationCode">
+      <End Role="User" EntitySet="User" />
+      <End Role="EmailVerificationCode" EntitySet="EmailVerificationCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_PasswordVerificationCode" Association="Self.FK_User_PasswordVerificationCode">
+      <End Role="User" EntitySet="User" />
+      <End Role="PasswordVerificationCode" EntitySet="PasswordVerificationCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Reply" Association="Self.FK_User_Reply">
+      <End Role="User" EntitySet="User" />
+      <End Role="Reply" EntitySet="Reply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Review" Association="Self.FK_User_Review">
+      <End Role="User" EntitySet="User" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserSkill_Skill" Association="Self.FK_UserSkill_Skill">
+      <End Role="Skill" EntitySet="Skill" />
+      <End Role="UserSkill" EntitySet="UserSkill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserSkill_User" Association="Self.FK_UserSkill_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserSkill" EntitySet="UserSkill" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

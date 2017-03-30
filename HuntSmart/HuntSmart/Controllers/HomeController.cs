@@ -3,12 +3,58 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HuntSmart.Models;
 
 namespace HuntSmart.Controllers
 {
     public class HomeController : Controller
     {
         // GET: Home
+        IProfile p;
+        public HomeController(IProfile pr)
+        {
+
+            p = pr;
+
+        }
+        public ActionResult userProfile()
+        {
+            string email = Session["lemail"].ToString();
+            User u = p.getuser(email);
+
+            string u_fname = u.User_FirstName;
+            string u_lname = u.User_LastName;
+            string u_dob = u.User_DOB;
+            string u_email = u.User_Email;
+            string u_des = u.User_Description;
+            string u_contact = u.User_ContactNo;
+            string u_dp = u.User_Dp;
+
+            Session["l_fname"] = u_fname;
+            Session["l_lname"] = u_lname;
+            Session["l_dob"] = u_dob;
+            Session["l_email"] = u_email;
+            Session["l_des"] = u_des;
+            Session["l_contact"] = u_contact;
+            Session["l_dp"] = u_dp;
+
+            return View();
+        }
+       
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
+        /// <returns></returns>
+
         public ActionResult Index()
         {
             return View();
@@ -18,8 +64,6 @@ namespace HuntSmart.Controllers
         {
             return View();
         }
-
-       
 
         public ActionResult companylist_l()
         {
@@ -86,11 +130,7 @@ namespace HuntSmart.Controllers
             return View();
         }
 
-        public ActionResult register()
-        {
-            return View();
-        }
-
+        
         public ActionResult topCompanies()
         {
             return View();
@@ -101,10 +141,7 @@ namespace HuntSmart.Controllers
             return View();
         }
 
-        public ActionResult userProfile()
-        {
-            return View();
-        }
+       
 
         public ActionResult userDashboard()
         {
